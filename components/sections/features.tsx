@@ -6,10 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function Features() {
   const metrics = [
-    { label: "Organic Search traffic", value: "842.1k", change: "New & Organic" },
-    { label: "Sales Pipeline Boost", value: "425%", change: "Scale & Growth" },
-    { label: "Target Keyword Leads", value: "12,402", change: "Qualified Leads" },
-    { label: "Growth Velocity", value: "vs Metro", change: "Performance Index" }
+    { label: "Campaign Setup Accuracy", value: "100%", change: "Configured & Audited" },
+    { label: "Core Web Vitals Target", value: "<1.2s", change: "Fast Page Load Speeds" },
+    { label: "Data Routing Webhooks", value: "Secure", change: "Low Latency Sync" },
+    { label: "A/B Test Deployments", value: "Weekly", change: "Continuous CRO Tuning" }
   ];
 
   return (
@@ -19,12 +19,12 @@ export function Features() {
           <div className="lg:col-span-6 space-y-4">
             <h2 className="text-3xl font-extrabold tracking-tight">Precision Engineering for ROI</h2>
             <p className="text-slate-500 text-sm leading-relaxed max-w-lg">
-              Every system we deploy is calibrated to maximize return on advertising spend. We combine data pipelines, crawler-friendly layouts, and algorithmic bid optimization to eliminate waste.
+              We structure your acquisition campaigns with continuous bid and audience optimization, and design landing pages that keep page load speeds fast to maximize return.
             </p>
           </div>
           <div className="lg:col-span-6 flex justify-end">
             <span className="text-xs font-mono font-bold uppercase text-blue-600 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
-              Live Stats Hub
+              Growth Intelligence indicators
             </span>
           </div>
         </div>

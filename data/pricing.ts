@@ -17,47 +17,54 @@ export interface PricingPlan {
 export const pricingPlans: PricingPlan[] = [
   {
     id: "starter",
-    name: "PPC Local Starter",
+    name: "PPC Launch Engine",
     price: "₹15,000",
     period: "/ month",
-    description: "Ideal for local businesses aiming to kickstart targeted client acquisition.",
+    description: "For local businesses and early-stage companies starting structured paid acquisition.",
     features: [
-      { text: "Google/Facebook/Meta Ads setup" },
-      { text: "2 custom landing page variations" },
-      { text: "Weekly reporting & campaign tuning" }
+      { text: "Google & Meta Ads setup" },
+      { text: "Campaign & audience configuration" },
+      { text: "2 landing-page variations" },
+      { text: "Weekly campaign optimization" },
+      { text: "Monthly performance report" }
     ],
-    ctaText: "Choose Starter Plan",
+    ctaText: "Start Your Campaign",
     ctaHref: "#contact"
   },
   {
     id: "booster",
-    name: "SME Growth Booster",
+    name: "Growth Optimization Engine",
     price: "₹28,000",
     period: "/ month",
-    description: "For scaling businesses wanting deeper automation and conversion optimization.",
+    description: "For growing businesses ready to improve acquisition and conversion efficiency.",
     features: [
-      { text: "All Starter features included" },
-      { text: "A/B testing on landing pages" },
-      { text: "Automated API lead integrations" },
-      { text: "Monthly strategy consultation" }
+      { text: "Everything in Starter" },
+      { text: "Landing-page A/B testing" },
+      { text: "Conversion optimization" },
+      { text: "Lead automation" },
+      { text: "CRM/API integrations" },
+      { text: "Monthly growth strategy session" }
     ],
-    ctaText: "Plan Growth Booster",
+    ctaText: "Build My Growth Engine",
     ctaHref: "#contact",
     popular: true
   },
   {
     id: "enterprise",
-    name: "Enterprise Scale Engine",
+    name: "Custom Growth Engineering",
     price: "₹50,000+",
     period: "/ month",
-    description: "Custom integrations, deep web vitals tuning, and dedicated lead desk routing.",
+    description: "For organizations requiring custom analytics, integrations and advanced acquisition infrastructure.",
     features: [
-      { text: "All Growth features included" },
-      { text: "Server-side GTM configurations" },
+      { text: "Everything in Growth" },
+      { text: "Server-side tracking" },
       { text: "Custom CRM integrations" },
-      { text: "24/7 priority support" }
+      { text: "Advanced attribution" },
+      { text: "Custom API/webhook systems" },
+      { text: "Performance optimization" },
+      { text: "Priority support" }
     ],
-    ctaText: "Plan Enterprise Engine",
+    ctaText: "Talk to a Growth Engineer",
     ctaHref: "#contact"
   }
 ];

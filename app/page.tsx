@@ -15,7 +15,7 @@ import { FAQ } from "@/components/sections/faq";
 import { CTA } from "@/components/sections/cta";
 
 export default function Home() {
-  const [roiBudget, setRoiBudget] = useState<string>("1000");
+  const [roiBudget, setRoiBudget] = useState<string>("50000");
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const toggleDarkMode = () => {
