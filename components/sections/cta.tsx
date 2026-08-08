@@ -12,23 +12,35 @@ interface CTAProps {
 }
 
 export function CTA({ darkMode }: CTAProps) {
-  const [contactEmail, setContactEmail] = useState<string>("");
+  
+  const [fullName, setFullName] = useState<string>("");
+  const [emailOrPhone, setEmailOrPhone] = useState<string>("");
+  const [websiteUrl, setWebsiteUrl] = useState<string>("");
+  const [scaleNote, setScaleNote] = useState<string>("");
+
   const [newsletterEmail, setNewsletterEmail] = useState<string>("");
   const [contactSubmitted, setContactSubmitted] = useState<boolean>(false);
   const [newsletterSubmitted, setNewsletterSubmitted] = useState<boolean>(false);
 
   const handleContact = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!contactEmail) return;
+    if (!fullName || !emailOrPhone) return;
     setContactSubmitted(true);
-    await sendTelegramNotification("audit", contactEmail);
+    const res = await sendTelegramNotification("audit", {
+      fullName,
+      emailOrPhone,
+      websiteUrl,
+      scaleNote,
+    });
+    console.log("Audit request Telegram result:", res);
   };
 
   const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newsletterEmail) return;
     setNewsletterSubmitted(true);
-    await sendTelegramNotification("newsletter", newsletterEmail);
+    const res = await sendTelegramNotification("newsletter", newsletterEmail);
+    console.log("Newsletter Telegram result:", res);
   };
 
   return (
@@ -46,14 +58,49 @@ export function CTA({ darkMode }: CTAProps) {
         ) : (
           <form onSubmit={handleContact} className="space-y-4 text-left">
             <div>
-              <label htmlFor="email-input" className="block text-xs font-bold uppercase text-slate-400 mb-2">Work Email Address</label>
+              <label htmlFor="name-input" className="block text-xs font-bold uppercase text-slate-400 mb-2">Your Full Name *</label>
               <Input
-                id="email-input"
-                type="email"
+                id="name-input"
+                type="text"
                 required
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
-                placeholder="name@company.com"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                placeholder="e.g. Rahul Sharma"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-input" className="block text-xs font-bold uppercase text-slate-400 mb-2">Email Address or Phone *</label>
+              <Input
+                id="contact-input"
+                type="text"
+                required
+                value={emailOrPhone}
+                onChange={(e) => setEmailOrPhone(e.target.value)}
+                placeholder="name@company.com or +91..."
+              />
+            </div>
+
+            <div>
+              <label htmlFor="url-input" className="block text-xs font-bold uppercase text-slate-400 mb-2">Business / Website URL</label>
+              <Input
+                id="url-input"
+                type="text"
+                value={websiteUrl}
+                onChange={(e) => setWebsiteUrl(e.target.value)}
+                placeholder="https://yourbrand.com or Institute Name"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="scale-input" className="block text-xs font-bold uppercase text-slate-400 mb-2">How Can We Help You Scale?</label>
+              <textarea
+                id="scale-input"
+                value={scaleNote}
+                onChange={(e) => setScaleNote(e.target.value)}
+                placeholder="Tell us about your goals..."
+                rows={3}
+                className="flex w-full rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 px-3 py-2 text-sm shadow-sm transition-colors focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 text-slate-900 dark:text-slate-100"
               />
             </div>
 
