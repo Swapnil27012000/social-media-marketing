@@ -9,7 +9,7 @@ export const siteConfig = {
     github: "https://github.com/eklevelup",
   },
   contact: {
-    email: "growth@eklevelup.com",
+    email: "swapnilkamble27012000@gmail.com",
     address: "WCAG 2.2 compliant spacing & color layout",
   }
 };
