@@ -19,7 +19,7 @@ export const pricingPlans: PricingPlan[] = [
     id: "starter",
     name: "PPC Launch Engine",
     price: "₹15,000",
-    period: "/ month",
+    period: "/ month + GST",
     description: "For local businesses and early-stage companies starting structured paid acquisition.",
     features: [
       { text: "Google & Meta Ads setup" },
@@ -35,7 +35,7 @@ export const pricingPlans: PricingPlan[] = [
     id: "booster",
     name: "Growth Optimization Engine",
     price: "₹28,000",
-    period: "/ month",
+    period: "/ month + GST",
     description: "For growing businesses ready to improve acquisition and conversion efficiency.",
     features: [
       { text: "Everything in Starter" },
@@ -53,7 +53,7 @@ export const pricingPlans: PricingPlan[] = [
     id: "enterprise",
     name: "Custom Growth Engineering",
     price: "₹50,000+",
-    period: "/ month",
+    period: "/ month + GST",
     description: "For organizations requiring custom analytics, integrations and advanced acquisition infrastructure.",
     features: [
       { text: "Everything in Growth" },

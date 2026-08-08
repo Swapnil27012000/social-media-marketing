@@ -7,7 +7,7 @@ export const headerNavItems: NavItem[] = [
   { title: "Solutions", href: "#services" },
   { title: "Engineering", href: "#growth-plan" },
   { title: "Case Studies", href: "#calculator" },
-  { title: "Company", href: "#about" },
+  // { title: "Company", href: "#about" },
 ];
 
 export const footerNavItems = {

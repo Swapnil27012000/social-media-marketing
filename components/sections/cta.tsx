@@ -5,23 +5,30 @@ import { Container } from "@/components/ui/container";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { sendTelegramNotification } from "@/app/actions";
 
 interface CTAProps {
   darkMode: boolean;
 }
 
 export function CTA({ darkMode }: CTAProps) {
+  const [contactEmail, setContactEmail] = useState<string>("");
+  const [newsletterEmail, setNewsletterEmail] = useState<string>("");
   const [contactSubmitted, setContactSubmitted] = useState<boolean>(false);
   const [newsletterSubmitted, setNewsletterSubmitted] = useState<boolean>(false);
 
-  const handleContact = (e: React.FormEvent) => {
+  const handleContact = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!contactEmail) return;
     setContactSubmitted(true);
+    await sendTelegramNotification("audit", contactEmail);
   };
 
-  const handleNewsletter = (e: React.FormEvent) => {
+  const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!newsletterEmail) return;
     setNewsletterSubmitted(true);
+    await sendTelegramNotification("newsletter", newsletterEmail);
   };
 
   return (
@@ -44,6 +51,8 @@ export function CTA({ darkMode }: CTAProps) {
                 id="email-input"
                 type="email"
                 required
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="name@company.com"
               />
             </div>
@@ -59,7 +68,7 @@ export function CTA({ darkMode }: CTAProps) {
 
         <div className="pt-6">
           <p className="text-xs text-slate-450">Join our mailing list for quarterly marketing strategy insights.</p>
-          
+
           {newsletterSubmitted ? (
             <div className="mt-3 text-xs text-green-500 font-bold">✓ Subscribed successfully!</div>
           ) : (
@@ -67,6 +76,8 @@ export function CTA({ darkMode }: CTAProps) {
               <Input
                 type="email"
                 required
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="news@company.com"
                 aria-label="Newsletter email"
                 className="flex-1"
