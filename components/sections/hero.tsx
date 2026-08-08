@@ -17,13 +17,13 @@ export function Hero({ darkMode }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <Badge>⚡ Precision Growth Engineering Agency</Badge>
-            
+
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Scale Your Pipeline with Data-Driven Acquisition
+              Engineer Your Growth. Scale Your Pipeline.
             </h1>
-            
+
             <p className={`text-base leading-relaxed ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-              We engineer custom digital marketing engines, hyper-focused optimization campaigns, and advanced growth analytics frameworks built specifically for high-growth enterprises.
+              We build data-driven acquisition systems that combine paid media, SEO, conversion optimization, analytics, and automation to turn marketing spend into measurable pipeline for ambitious businesses.
             </p>
 
             <div className="flex flex-wrap gap-4 items-center">
@@ -44,10 +44,10 @@ export function Hero({ darkMode }: HeroProps) {
 
             <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs">
               <a href="#services" className="text-blue-600 hover:underline font-semibold focus-ring">
-                Read our SEO whitepaper &rarr;
+                Read our SEO strategy guide &rarr;
               </a>
               <a href="#growth-plan" className="text-blue-600 hover:underline font-semibold focus-ring">
-                View our 2026 performance stats &rarr;
+                View our marketing performance loops &rarr;
               </a>
             </div>
           </div>
@@ -59,20 +59,29 @@ export function Hero({ darkMode }: HeroProps) {
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
               </CardHeader>
               <CardContent className="space-y-4 pt-2">
-                <div>
-                  <p className="text-xs text-slate-500">Pipeline Generated</p>
-                  <p className="text-2xl font-bold text-slate-800 dark:text-white font-mono">$184.2M</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-xs text-slate-500">Campaigns Optimized</p>
+                    <p className="text-xl font-bold text-slate-800 dark:text-white font-mono">25+</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500">Landing Pages Built</p>
+                    <p className="text-xl font-bold text-slate-800 dark:text-white font-mono">40+</p>
+                  </div>
                 </div>
                 <div className="h-px bg-slate-200 dark:bg-slate-800" />
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-xs text-slate-500">Avg. ROI Boost</p>
-                    <p className="text-lg font-bold text-green-500 font-mono">+340%</p>
+                    <p className="text-xs text-slate-500">Businesses Supported</p>
+                    <p className="text-xl font-bold text-green-500 font-mono">15+</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500">Active Ad Campaigns</p>
-                    <p className="text-lg font-bold text-slate-800 dark:text-white font-mono">1,489</p>
+                    <p className="text-xs text-slate-500">Marketing Integrations</p>
+                    <p className="text-xl font-bold text-slate-800 dark:text-white font-mono">30+</p>
                   </div>
+                </div>
+                <div className="pt-2 text-center border-t border-slate-100 dark:border-slate-800">
+                  <p className="text-[10px] text-slate-400 italic font-medium">Growth Intelligence dashboard</p>
                 </div>
               </CardContent>
             </Card>
