@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scale by EkLevelUp - Marketing & Growth Engineering Portal
+
+This is the front-end marketing page for **Scale by EkLevelUp**, a precision digital marketing and growth engineering agency. The project is built using Next.js, styled with Tailwind CSS, and structured modularly for absolute maintainability and accessibility.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies and launch the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project has been refactored into modular components, separation of concerns, and clean static datasets:
 
-## Learn More
+```
+frontend/
+├── app/                  # Next.js App Router Page Entry
+│   ├── layout.tsx        # Global Layout Wrapper
+│   ├── page.tsx          # Orchestrator of landing page components
+│   ├── globals.css       # Tailwind configuration & design tokens
+│   ├── robots.ts         # Search engine crawler permissions
+│   └── sitemap.ts        # XML Sitemap index
+│
+├── components/
+│   ├── layout/           # Global navbar and footer
+│   ├── sections/         # Individual landing page sections (Hero, Services, Pricing, etc.)
+│   └── ui/               # Standardized reusable visual elements (Container, Badge, Card)
+│
+├── data/                 # Static content matrices (services, pricing, FAQ, testimonials)
+├── config/               # Site configuration and global metadata constants
+└── lib/                  # Helper utilities and constant metrics
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Modular UI Structure**: Components are isolated, allowing easy modifications to specific sections of the page.
+- **Dynamic Calculator**: Includes an interactive monthly advertising budget return (ROI) calculator.
+- **Accessible Design**: Complies with WCAG 2.2 AA standards, utilizing designated theme tokens and focus behaviors.
+- **Search Engine Optimization**: Implements semantic structures, robots crawling permissions, and dynamic sitemaps.
